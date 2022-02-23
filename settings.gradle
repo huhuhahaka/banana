@@ -1,1 +1,8 @@
 rootProject.name = 'banana'
+
+include 'gateway'
+include 'auth'
+include 'common'
+include 'service'
+include 'jwt'
+

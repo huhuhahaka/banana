@@ -1,0 +1,19 @@
+server:
+    port: 8080
+
+spring:
+    application:
+        name: gateway
+    cloud:
+        gateway:
+            routes:
+                - id: getToken
+                  uri: http://127.0.0.1:8081
+                  predicates:
+                    - Path=/getToken
+                  filters:
+                    - PrefixPath=/auth
+                - id: serviceHello
+                  uri: http://127.0.0.1:8082
+                  predicates:
+                    - Path=/service/**
